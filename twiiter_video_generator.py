@@ -175,7 +175,7 @@ def workflow(keys):
     msgs = messageQueue()
     event = threading.Event()
 
-    producer = threading.Thread(target=generate_twitter_list, args=(keys, msgs, event), daemon=False)
+    producer = threading.Thread(target=command_line_inteface, args=(keys, msgs, event), daemon=False)
     producer.start()
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
         executor.submit(generate_video, msgs, event)
