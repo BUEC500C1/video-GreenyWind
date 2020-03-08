@@ -154,7 +154,7 @@ The consumer: continue generating video according to the twitter lists
 in the queue/cache until the producer meets keyword 'quit' and the
 queue/cache is empty (all works are done)
 '''
-def generate_video(mags, event):
+def generate_video(msgs, event):
     processor = twitter_processor()
     while ((not event.is_set()) or (not msgs.empty())):
     # stop only when the message queue is empty and user entered 'quit'
