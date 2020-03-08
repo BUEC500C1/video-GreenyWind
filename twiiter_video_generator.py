@@ -120,7 +120,7 @@ class twitter_processor():
             x, y = 10, 75
             for line in lines:
                 width, height = font.getsize(line)
-                draw.text(((x), y), line, font=font, fill="black")
+                img.text(((x), y), line, font=font, fill="black")
                 y += 20
             background.save(dir_path + keyword + '_' + str(i) + '.png')
 
