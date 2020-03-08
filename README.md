@@ -24,5 +24,6 @@ The program consists of one producer which continuously provides list of tweets 
 
 ## Results
 
-[pic](./twitter_images/tonado/tornado_1.png)
+![pic](./twitter_images/tonado/tornado_1.png)
+
 [demo video](./twitter_videos/tornado.avi)
