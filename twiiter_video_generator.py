@@ -57,7 +57,7 @@ class twitter_processor():
         self.access_token = config.get('auth', 'access_token').strip()
         self.access_token_secret = config.get('auth', 'access_secret').strip()
 
-    def filter(text):  # delete non-sense characters from the tweet
+    def filter(self, text):  # delete non-sense characters from the tweet
         
         text = re.sub('RT \@+\w+\:','',text)  #delete head of retweet
         text = re.sub('\#+\w+\s','',text)     #delete hashtag
@@ -66,7 +66,7 @@ class twitter_processor():
         text = re.sub('\n','',text)                  #delete \n
         return text
 
-    def generate_twitter_list(keyword):
+    def generate_twitter_list(self, keyword):
         
         twitter_list = [keyword]
         hash_list = []
@@ -104,7 +104,7 @@ class twitter_processor():
 
         return twitter_list
 
-    def twilist2img(twitter_list):
+    def twilist2img(self, twitter_list):
 
         keyword = twitter_list[0]
         dir_path = './twitter_images/' + keyword + '/'
@@ -123,7 +123,7 @@ class twitter_processor():
                 y += 20
             background.save(dir_path + keyword + '_' + str(i) + '.png')
 
-    def img2video(keyword):
+    def img2video(self, keyword):
 
         file_name =  './twitter_images/' + keyword +'/' + keyword + '_' + '%d' + '.png'
         avi =  "./twitter_videos/" + keyword + ".avi"
