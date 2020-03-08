@@ -226,6 +226,7 @@ def workflow(keys):
             logging.info('Main: consumer ' + str(tnumber) + "'s task is submitted")
 
     logging.info("Main: Exiting...")
+    return True
 
 if __name__ == '__main__':
 
