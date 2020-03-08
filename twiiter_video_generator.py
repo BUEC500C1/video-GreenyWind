@@ -4,6 +4,7 @@ import os
 import queue
 import re
 import signal
+import subprocess
 import textwrap
 import time
 import threading
@@ -82,7 +83,7 @@ class twitter_processor():
                         ]
         try:
             results = twitter.cursor(twitter.search, q=keyword, result_type = 'recent'
-                                , count = COUNT, include_entities = True)
+                                , count = MAX_TWEETS, include_entities = True)
             for idx, status in enumerate(results):  # 'results' is a generator. It yields tweet objects
                 if idx < MAX_TWEETS:
                     content={}
